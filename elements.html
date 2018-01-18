@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Elements - Phantom by HTML5 UP</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  <script>
+    function OnClick()
+      {
+        var TheElement=document.getElementById("Degrees");
+        var Degrees=TheElement.value;
+        var TheElement=document.getElementById("Minutes");
+        var Minutes=TheElement.value;
+        var TheElement=document.getElementById("Seconds");
+        var Seconds=TheElement.value;
+        
+        Degrees=parseFloat(Degrees);
+        Minutes=parseFloat(Minutes);
+        Seconds=parseFloat(Seconds);
+        
+        var DD=Degrees+(Minutes/60)+(Seconds/3600); 
+        
+        var TheElement=document.getElementById("DD");
+        TheElement.innerHTML=DD;
+      }
+    
+    function OnClick1() 
+			{
+        var TheElement=document.getElementById("Fahrenheit");
+        var Fahrenheit=TheElement.value;
+        
+        Fahrenheit=parseFloat(Fahrenheit);
+        
+				//var faren=Math.floor(f);
+    		var Text=(5/9) * (Fahrenheit-32);
+    
+    		  var TheElement=document.getElementById("Celsius");
+        TheElement.innerHTML=Text;
+			}
+    
+    
+     function OnClick2()
+      {
+        var TheElement=document.getElementById("Meters");
+        var Feet=TheElement.value;
+        
+        Meters=parseFloat(Feet);
+        
+        var Feet=3.28084;
+        var Feet=Meters * Feet;
+        
+        var TheElement=document.getElementById("Feet");
+        TheElement.innerHTML=Feet;
+      }
+    
+    
+     function OnClick3()
+      {
+        var TheElement=document.getElementById("Longitude");
+        var Longitude=TheElement.value;
+        var TheElement=document.getElementById("Latitude");
+        var Latitude=TheElement.value;
+        
+        Longitude=parseFloat(Longitude);
+        Latitude=parseFloat(Latitude);
+       
+        var DD=Math.abs(DD);
+        
+        var Degrees=Math.floor(DD);                                               //get the whole portion of the degree
+        	//alert(Degrees);
+
+      	var Minutes=Math.floor((DD-Degrees)*60);
+	       //alert(Minutes);
+
+      	var Seconds=(DD-Degrees-(Minutes/60))*3600;
+	      //alert(Seconds);
+
+	      var DMS=Degrees+"\xB0 "+Minutes+"' "+Seconds+"\""; 
+        
+        var TheElement=document.getElementById("DMS");
+        TheElement.innerHTML=DMS;
+      }
+  </script>
+</head>
+
+<body>
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo"> <span class="symbol"><img src="images/earth.jpg" alt=""></span><span class="title">Kassandra rodriguez</span> </a>
+        <!-- Nav -->
+        <nav>
+          <ul>
+            <li>
+              <a href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Menu -->
+    <nav id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li>
+          <a href="generic.html">Home</a>
+        </li>
+        <li>
+          <a href="index.html">Maps</a>
+        </li>
+        <li>
+          <a href="elements.html">Utilities</a>
+        </li>
+        <li>
+          <a href="generic3.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+        <h1>Utilities.</h1>
+        <!-- Text -->
+        <section>
+          <p>This page just showcases my Javascript skills, go ahead and input your values.</p>
+          <hr> </section>
+        <!-- Lists -->
+        <!-- Table -->
+        <!-- Buttons -->
+        <!-- Form -->
+        <section>
+          <h2>degrees to decimal</h2>
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="degrees" id="Degrees" value="" placeholder="Enter Degrees"> </div>
+            <div class="6u$ 12u$(xsmall)">
+              <input type="text" name="minutes" value="" placeholder="Enter Minutes" id="Minutes"> </div>
+            <div class="6u$ 12u$(xsmall)">
+              <input type="text" name="seconds" value="" placeholder="Enter Seconds" id="Seconds"> </div>
+          </div>
+          <p> &nbsp; </p>
+          <button type="submit" class="btn btn-primary" onclick="OnClick()">Compute</button>
+          <div id="DD"> </div>
+        </section>
+        <p> &nbsp; </p>
+        <section>
+          <h2>Fahrenheit To Celsius</h2>
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="Fahrenheit" id="Fahrenheit" value="" placeholder="Enter Fahrenheit"> </div>
+          </div>
+          <p> &nbsp; </p>
+          <button type="submit" class="btn btn-primary" onclick="OnClick1()">Compute</button>
+          <div id="Celsius"> </div>
+        </section>
+        <p> &nbsp; </p>
+        <section>
+          <h2>Meters to Feet</h2>
+          <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+              <input type="text" name="Meters" value="" placeholder="Enter Meters" id="Meters"> </div>
+          </div>
+          <p> &nbsp; </p>
+          <button type="submit" class="btn btn-primary" onclick="OnClick2()">Compute</button>
+          <div id="Feet"> </div>
+        </section>
+        <!-- Image -->
+      </div>
+    </div>
+    <!-- Footer -->
+  </div>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+  <script src="assets/js/main.js"></script>
+  
+</body>
+
+</html>
